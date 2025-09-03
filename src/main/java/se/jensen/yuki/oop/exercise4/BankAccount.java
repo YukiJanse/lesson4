@@ -12,19 +12,20 @@ public class BankAccount {
         return balance;
     }
 
-    public void deposit(int depositNumber) {
-        if (depositNumber > 0) {
-            balance += depositNumber;
+    public void deposit(int amount) {
+        if (amount > 0) {
+            balance += amount;
         } else {
             System.out.println("Ogiltig deposit number");
         }
     }
 
-    public void withdraw(int withdrawNumber) {
-        if (withdrawNumber > 0) {
-            balance -= withdrawNumber;
-            if (balance < 0) {
-                balance = 0;
+    public void withdraw(int amount) {
+        if (amount > 0) {
+            if (balance > amount) {
+                balance -= amount;
+            } else {
+                System.out.println("Saldot är inte tillräckligt");
             }
         } else {
             System.out.println("Ogiltig deposit number");
