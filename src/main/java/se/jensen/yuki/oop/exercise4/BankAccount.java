@@ -22,7 +22,7 @@ public class BankAccount {
 
     public void withdraw(int amount) {
         if (amount > 0) {
-            if (balance > amount) {
+            if (balance >= amount) {
                 balance -= amount;
             } else {
                 System.out.println("Saldot är inte tillräckligt");
